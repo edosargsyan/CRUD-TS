@@ -1,11 +1,11 @@
 import {useState } from "react";
 import React from "react";
-import {useParams} from 'react-router-dom'
+import {Link, useNavigate, useParams} from 'react-router-dom'
 import {IUsers} from '../types/type'
 let UpdateUser:React.FC=()=>{
     const[value,setValue] = useState<IUsers>({name:'',lastname:'',age:'',username:"",email:"",password:""})
     const {_id} = useParams()
-  
+    const navigate = useNavigate()
     function update(){
  fetch('/posts',{
         method:"PUT",

@@ -20,9 +20,11 @@ export const Posts:React.FC=()=>{
        return(
            <>
               {users.map(item=>
-              <div className='post' key={item._id}>
-                <Link to={'/users/'+item._id}>{item.name}</Link>
+              <Link to={'users/'+item._id} className='post'>
+              <div  key={item._id}>
+                <p>{item.name}</p>
                 </div>
+                </Link>
                )}
            </>
        )
